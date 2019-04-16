@@ -50,3 +50,28 @@ object1.doSomething2 = function name(params) {
     console.log("do something2");
 }
 
+// Make a repeatable object we convert into function
+// Functional Instantiation
+
+function objectName(prperty1, property2) {
+    let objectName = {};
+
+    objectName.property1 = "test";
+    objectName.property2 = "test2";
+
+    objectName.doSomething1 = function name(params) {
+        console.log("do something1");
+    };
+    objectName.doSomething2 = function name(params) {
+        console.log("do something2");
+    }
+    return objectName;
+};
+
+const object1 = objectName("p1", "p2");
+const object2 = objectName("p1", "p2");
+
+
+// Make one reference to the object methods instead of creating methods with each object
+// This makes the process by using less memory and making the object small size
+
