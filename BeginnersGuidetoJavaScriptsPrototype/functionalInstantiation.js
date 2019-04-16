@@ -25,10 +25,28 @@ function animal(name, energy) {
 const neo = animal('Neo', 7);
 const snoopy = Animal('Snoopy', 11);
 
-``` 
+``
+` 
     This approach can be made better since everytime we create the animal 
     "instance" we are creating the eat sleep and play functions. 
     There’s no reason to re-create those methods as we’re currently doing whenever we create a new animal.
     Lets make it better in the Functional Instantiation with Shared Methods
     Reference the online article from Tyler. 
-```
+`
+``
+
+
+// ** Model **
+
+// Simple object with properties 
+let object1 = {};
+object1.property1 = "test";
+object1.property2 = "test2";
+
+object1.doSomething1 = function name(params) {
+    console.log("do something1");
+};
+object1.doSomething2 = function name(params) {
+    console.log("do something2");
+}
+
