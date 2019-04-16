@@ -75,3 +75,27 @@ const object2 = objectName("p1", "p2");
 // Make one reference to the object methods instead of creating methods with each object
 // This makes the process by using less memory and making the object small size
 
+let objectMethods = {
+    doSomething1(params) {
+        console.log("do something1");
+    },
+    doSomething2(params) {
+        console.log("do something2");
+    }
+};
+
+function objectName(prperty1, property2) {
+    let objectName = {};
+
+    objectName.property1 = "test";
+    objectName.property2 = "test2";
+    objectName.doSomething1 = objectMethods.doSomething1;
+    objectName.doSomething2 = objectMethods.doSomething2;
+
+    return objectName;
+};
+
+const object1 = objectName("p1", "p2");
+const object2 = objectName("p1", "p2");
+
+// Gi
