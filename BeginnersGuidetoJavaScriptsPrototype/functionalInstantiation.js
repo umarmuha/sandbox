@@ -98,4 +98,26 @@ function objectName(prperty1, property2) {
 const object1 = objectName("p1", "p2");
 const object2 = objectName("p1", "p2");
 
-// Gi
+// Going step further using Object.create() function to delegate another object for 
+// failed reference. This way we dont have to create reference for everything in the object.xyz
+
+let objectMethods = {
+    doSomething1(params) {
+        console.log("do something1");
+    },
+    doSomething2(params) {
+        console.log("do something2");
+    }
+};
+
+function objectName(prperty1, property2) {
+    let objectName = Object.create(objectMethods);  // Sending failed lookups to objectMethods
+
+    objectName.property1 = "test";
+    objectName.property2 = "test2";
+
+    return objectName;
+};
+
+const object1 = objectName("p1", "p2");
+const object2 = objectName("p1", "p2");
