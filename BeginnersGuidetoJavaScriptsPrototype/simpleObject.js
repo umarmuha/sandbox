@@ -10,3 +10,12 @@ animal.eat = function (amount) {
     this.energy += amount;
 }
 
+animal.sleep = function (length) {
+    console.log(`${this.name} is sleeping`);
+    this.energy += length;
+};
+
+animal.playing = function (length) {
+    console.log(`${this.name} is playing`);
+    this.energy -= length;
+};
