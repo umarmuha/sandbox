@@ -121,3 +121,25 @@ function objectName(prperty1, property2) {
 
 const object1 = objectName("p1", "p2");
 const object2 = objectName("p1", "p2");
+
+
+// Going step further instead of using built in Prototype (object) property for every function 
+// Intead of using Object.create and managing different obejects
+
+function objectName(prperty1, property2) {
+    let objectName = Object.create(objectName.prototype);
+
+    objectName.property1 = "test";
+    objectName.property2 = "test2";
+
+    objectName.prototype.doSomething1 = function name(params) {
+        console.log("do something1");
+    };
+    objectName.prototype.doSomething2 = function name(params) {
+        console.log("do something2");
+    }
+    return objectName;
+};
+
+const object1 = objectName("p1", "p2");
+const object2 = objectName("p1", "p2");
