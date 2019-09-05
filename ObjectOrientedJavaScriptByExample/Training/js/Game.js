@@ -52,11 +52,32 @@ class Game {
                 this.activePlayer.activeToken.moveRight(this.board.columns);
                 console.log(this.activePlayer.activeToken.offsetLeft);
             } else if (e.key === "ArrowDown") {
-                this.activePlayer.activeToken.drop();
+                this.playToken();
                 //play token
             }
         }
-    }
+    };
+
+    playToken(){
+        let spaces = this.board.spaces;
+        let activeToken = this.activePlayer.activeToken;
+        let targetColumn = spaces[activeToken.columnLocation];
+        let targetSpace = null;
+
+        // Finding an open space in the targetColumn
+        for (let space of targetColumn) {
+            if (space.token === null) {
+                targetSpace = space;
+            }
+        }
+
+        // Once an open space is avilable drop the token
+        if (targetSpace !== null) {
+            this.ready = false;
+            activeToken.drop(targetSpace);
+        }
+
+    };
 
 
     

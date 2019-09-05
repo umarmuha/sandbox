@@ -16,9 +16,12 @@ class Board {
             for (let y = 0; y < this.rows; y++) {
                 const space = new Space(x, y);
                 columns.push(space);
+                
             }
+            console.log(columns);
             spaces.push(columns);
-        }                      
+        }
+        console.log(spaces);                      
         return spaces;
     }
     /**
