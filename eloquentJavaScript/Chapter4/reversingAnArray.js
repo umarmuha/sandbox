@@ -27,3 +27,39 @@ function reverseInPlace(array) {
 }
 
 console.log(reverseInPlace([1, 2, 3, 4]));
+
+// My Approach the 2ND Time
+
+
+/**
+ * Write a program that takes an array as argument and produces a new array that has the same elements in the inverse order
+ * @returns {array} the result
+ */
+
+function reverseArray(array) {
+    newArray = [];
+    for (const element of array) {
+        newArray.unshift(element);
+    }
+    return newArray;
+}
+
+console.log(reverseArray([1,2,-3,4]))
+
+
+/**
+ * Write a program that modifies the array given as argument by reversing its elements
+ * @returns {array} the result
+ */
+
+function reverseArrayInPlace(array) {
+    let middle = Math.floor(array.length /2 );
+    for (let index = 0; index < middle; index++) {
+        let indexValue = array[index];
+        array[index] = array[array.length - (index + 1)];
+        array[array.length - (index + 1)] = indexValue;
+    }
+    return array;
+}
+
+console.log(reverseArrayInPlace([2,3,5,7,11]));
