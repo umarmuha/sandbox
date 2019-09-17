@@ -8,13 +8,13 @@
     Write a range function that takes two arguments, start and end, and returns an array containing all the numbers from start up to (and including) end.
 */
 
-// function range(start, end) {
-//     let array = [];
-//     for (let index = start; index <= end; index++) {
-//         array.push(index);
-//     }
-//     return array;
-// }
+function range(start, end) {
+    let array = [];
+    for (let index = start; index <= end; index++) {
+        array.push(index);
+    }
+    return array;
+}
 
 /** 
     As a bonus assignment, modify your range function to take an optional third argument 
