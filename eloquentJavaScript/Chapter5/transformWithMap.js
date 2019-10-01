@@ -1930,7 +1930,7 @@ var SCRIPTS = [{
 
 /**
  * The idea of the map() function is to create a new array from the original array with
- * only the elements that the user want to cherry pick
+ * only the elements that the user want to cherry pick from each element.
  * In the SCRIPTS example, there is so much data. If I want a certain data from each entry and 
  * want to make a array out of it, map() is the easiest way to accmplish that task. Different from 
  * filter() where it discards the items that do not meet the test
@@ -1947,3 +1947,20 @@ function map(array, transform) {
 let rtlScripts = SCRIPTS.filter(element => element.direction == "rtl");
 console.log(rtlScripts);
 console.log(map(rtlScripts, element => element.name));
+
+
+// My own Example. This is only good if you need names from each entry. The function above is more dynamic and 
+// can transform using any requirements
+
+// First the inner workings map
+function map(array) {
+    let mapped = [];
+    for (const element of array) {
+        mapped.push(element.name);
+    }
+    return mapped;
+}
+//console.log(map(SCRIPTS));
+
+// Now the short method
+console.log(SCRIPTS.map( a => a.name));
