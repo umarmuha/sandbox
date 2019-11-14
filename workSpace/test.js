@@ -266,11 +266,11 @@ console.log(findSolution(24));
 let name = "John";
 
 function sayHi() {
-  console.log("Hi, " + name);
+    console.log("Hi, " + name);
 }
 
 name = "Pete";
-sayHi(); 
+sayHi();
 
 
 // In ES6 you can use the ... notation to expand the array elements
@@ -282,7 +282,45 @@ console.log(Math.min(...array1));
 let journal = [];
 
 function addEntry(events, squirrel) {
-    journal.push({events, squirrel});
+    journal.push({
+        events,
+        squirrel
+    });
 }
 
+/**
+ * Example from Reddit.
+ * Yes, you can. You can define functions in the global scope in one file and have it available in another one. 
+ * It's not something that is encountered a lot in modern JS development, though, because it's not a very good practice to rely on global scope.
+ * Something like this will work, for example:
+ */
 
+// // fileA.js
+// function message(text) {
+//     alert(text)
+// }
+
+// // notice `shout` from another file:
+// const button = document.getElementById('button')
+// button.addEventListener('click', () => shout('hello'))
+
+// // fileB.js
+// // notice `message` from another file:
+// function shout(text) {
+//     message(text.toUpperCase())
+// }
+//   // index.html
+//   <html>
+//     <head>
+//       <title>Hello world</title>
+//     </head>
+//     <body>
+//       <button id="button">Click</button>
+//       <script src="./fileA.js"></script>
+//       <script src="./fileB.js"></script>
+//     </body>
+//   </html>
+
+// #### Practice ####
+
+console.log([1,2,3].reduce((a,b) => a +b));
